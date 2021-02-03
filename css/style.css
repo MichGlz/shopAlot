@@ -70,6 +70,92 @@ body {
   margin-left: 5vw;
 }
 
+/*Category*/
+.category main {
+  width: min(1100px, 80vw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.letterLinks {
+  height: 7vh;
+  width: 100%;
+}
+
+.letterLinks ul {
+  margin-top: 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* gap: 0.5rem; */
+  font-size: 1.4rem;
+}
+
+.letterLinks ol li {
+  padding: 0;
+  margin: 0;
+}
+
+.letterLinks a {
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.letterLinks a:hover {
+  color: coral;
+  font-size: 150%;
+}
+
+.brandList h2 {
+  font-family: slackey;
+  color: rgb(157, 174, 206);
+  font-size: 2rem;
+  padding-left: 2vw;
+  background-color: rgb(227, 228, 228);
+}
+
+.brandList ol {
+  list-style-type: none;
+}
+.brandList li {
+  border-bottom: 1px solid #d8d8d8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.brandList a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  color: black;
+}
+.brandList li::after {
+  display: block;
+  width: 20px;
+  height: 20px;
+  content: "";
+  transition: all 0.3s;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 14"><path fill="none" stroke="white" d="M.8 12.87l7.5-6-7.5-6"></path></svg>');
+  background-repeat: no-repeat;
+  /* url('data:image/svg+xml;utf8,<svg class="svg-arrowRight" viewBox="0 0 9 14"><path fill="none" stroke="#979797" d="M.8 12.87l7.5-6-7.5-6"></path></svg>'); */
+}
+.brandList li:hover {
+  background: rgb(157, 174, 206);
+  transition: transform 0.3s;
+}
+.brandList li:hover::after {
+  transform: translateX(8px);
+}
+
+@media screen and (min-width: 800px) {
+  .brandList ol {
+    column-count: 2;
+  }
+}
+
 /*Product*/
 
 .product main {
