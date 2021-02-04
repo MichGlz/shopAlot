@@ -105,7 +105,7 @@ body {
 
 .letterLinks a:hover {
   color: coral;
-  font-size: 150%;
+  font-weight: bold;
 }
 
 .brandList h2 {
@@ -154,6 +154,85 @@ body {
   .brandList ol {
     column-count: 2;
   }
+}
+
+/*ProductList*/
+.productlist main {
+  width: min(1600px, 80vw);
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
+  gap: 3rem;
+}
+.productlist main h2 {
+  font-size: calc(1vw + 1.5rem);
+  grid-column: 1/-1;
+  background-color: rgb(157, 174, 206);
+}
+
+.productlist article {
+  background-color: white;
+  border: black;
+  border-style: solid;
+  border-radius: 1vw;
+  padding: 1rem;
+  transform-origin: center;
+  transition: 0.5s;
+}
+
+.productlist article:hover {
+  transform: scale(1.2);
+}
+
+.productlist article h3 {
+  font-size: 1rem;
+  flex-grow: 3;
+}
+.productlist article > * {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.subtle {
+  color: #d8d8d8cc;
+}
+.productlist article {
+  display: flex;
+  flex-direction: column;
+}
+.productlist article.soldOut img {
+  opacity: 0.5;
+}
+.productlist article.soldOut::before {
+  content: "Sold Out";
+  position: absolute;
+  background: var(--color);
+  color: var(--background-color);
+  padding: 1rem;
+}
+.productlist article .discounted,
+.productlist article .price span {
+  display: none;
+}
+.productlist article.onSale .discounted {
+  display: flex;
+  justify-content: space-between;
+}
+.discounted > p {
+  margin-bottom: 0;
+}
+.productlist article.onSale .price span {
+  display: initial;
+}
+.productlist article button {
+  margin-top: auto;
+}
+.productlist article {
+  margin-bottom: 1rem;
+}
+.discounted p:last-child {
+  background: var(--off-color);
+  padding: 0.2rem;
 }
 
 /*Product*/
