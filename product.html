@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Some Product</title>
-    <link rel="stylesheet" href="css/base.css" />
+    <!-- <link rel="stylesheet" href="css/base.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="product">
@@ -19,8 +19,8 @@
       <ol class="breadcrumbs">
         <li><a href="index.html">Home</a></li>
         <li><a href="category.html">Brands</a></li>
-        <li><a href="productlist.html">Nike</a></li>
-        <li>Sahara Team India Fanwear Round Neck Jersey</li>
+        <li class="brand"><a href="productlist.html">Nike</a></li>
+        <li class="productname">Sahara Team India Fanwear Round Neck Jersey</li>
       </ol>
       <img
         class="productimg"
@@ -30,8 +30,14 @@
 
       <div class="info-PurchaseBox">
         <section class="purchaseBox">
-          <h3>Sahara Team India Fanwear Round Neck Jersey</h3>
-          <p>Nike | Tshirts</p>
+          <h3 class="productname">
+            Sahara Team India Fanwear Round Neck Jersey
+          </h3>
+          <h2><span class="price"></span> DKK</h2>
+          <p>
+            <span class="brand">Nike </span> | <span class="category"></span> |
+            <span class="subcategory">Tshirts</span>
+          </p>
           <form>
             <label
               >Choose a size
@@ -48,17 +54,20 @@
         <section class="info">
           <h2>Product Information</h2>
           <dl>
-            <dt>Model name</dt>
-            <dd>Sahara Team India Fanwear Round Neck Jersey</dd>
-            <dt>Color</dt>
-            <dd>Blue</dd>
-            <dt>Inventory number</dt>
-            <dd>1163</dd>
+            <dt>Model name:</dt>
+            <dd class="productname">
+              Sahara Team India Fanwear Round Neck Jersey
+            </dd>
+            <dt>Color:</dt>
+            <dd class="baseColour">Blue</dd>
+            <dt>Inventory number:</dt>
+            <dd class="idNo">1163</dd>
           </dl>
-          <h1>Nike</h1>
-          <p>Nike, creating experiences for today’s athlete</p>
+          <h1 class="brand">Nike</h1>
+          <p class="brandbio">Nike, creating experiences for today’s athlete</p>
         </section>
       </div>
     </main>
+    <script src="product.js"></script>
   </body>
 </html>
