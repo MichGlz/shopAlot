@@ -1,7 +1,11 @@
-const url = "https://kea-alt-del.dk/t7/api/products/1531";
+const urlParams = new URLSearchParams(window.location.search);
+
+const productId = urlParams.get("id");
+
+const urlProduct = `https://kea-alt-del.dk/t7/api/products/${productId}`;
 
 //fetch the data
-fetch(url)
+fetch(urlProduct)
   .then((res) => res.json())
   .then((data) => showProduct(data));
 
