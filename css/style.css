@@ -2,6 +2,7 @@
 
 :root {
   --off-color: red;
+  --color: rgb(227, 227, 228);
 }
 html {
   scroll-behavior: smooth;
@@ -188,17 +189,19 @@ body {
 .productlist article h3 {
   font-size: 1rem;
   flex-grow: 3;
+  margin-top: 1.5rem;
 }
 .productlist article > * {
   margin: 0;
   font-size: 0.9rem;
 }
 .subtle {
-  color: #d8d8d8cc;
+  color: #727272f3;
 }
 .productlist article {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .productlist article.soldOut img {
   opacity: 0.5;
@@ -207,8 +210,13 @@ body {
   content: "Sold Out";
   position: absolute;
   background: var(--color);
-  color: var(--background-color);
+  color: black;
+  /* color: var(--background-color); */
   padding: 1rem;
+  font-size: 2rem;
+  /* left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
 }
 .productlist article .discounted,
 .productlist article .price span {
@@ -232,7 +240,11 @@ body {
 }
 .discounted p:last-child {
   background: var(--off-color);
-  padding: 0.2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: antiquewhite;
 }
 
 /*Product*/

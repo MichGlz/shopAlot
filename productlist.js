@@ -41,7 +41,7 @@ function showProduct(product) {
     let newPrice = product.price * (1 - product.discount / 100);
     copy.querySelector(
       ".discounted p"
-    ).textContent = `Now DKK ${newPrice.toFixed(2)}`;
+    ).textContent = `Now DKK ${newPrice.toFixed()},-`;
     copy.querySelector(
       ".discounted p:nth-child(2)"
     ).textContent = `- ${product.discount}%`;
