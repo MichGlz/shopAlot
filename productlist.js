@@ -12,6 +12,23 @@ function nextN() {
   nextNo = nextNo + xNo;
   console.log(nextNo);
   document.querySelectorAll("article").forEach((item) => item.remove());
+  document.querySelector("#prev").addEventListener("click", prevN);
+  newUrl();
+}
+
+function prevN() {
+  console.log("prevN");
+  nextNo = nextNo - xNo;
+  console.log(nextNo);
+  document.querySelectorAll("article").forEach((item) => item.remove());
+  if (nextNo < xNo) {
+    document.querySelector("#prev").removeEventListener("click", prevN);
+  }
+
+  newUrl();
+}
+
+function newUrl() {
   urlNew = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}`;
   fetch(urlNew)
     .then(function (res) {
