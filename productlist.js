@@ -1,6 +1,14 @@
+const urlParams = new URLSearchParams(window.location.search);
+
+const brandId = urlParams.get("brand");
+
+const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}`;
+
 const url = "http://kea-alt-del.dk/t7/api/products";
 
-fetch(url)
+document.querySelector("main h2").textContent = brandId;
+
+fetch(urlBrand)
   .then(function (res) {
     return res.json();
   })
