@@ -1,3 +1,4 @@
+//-----------------------------------------------------
 //casillas de letras
 const abecedario = [
   "a",
@@ -58,7 +59,9 @@ copy.querySelector("h2").textContent = "No.";
 const parent = document.querySelector(".brandList");
 //append
 parent.appendChild(copy);
+//----------------------------------------------------
 
+//-------------------------------------------------
 //Menu letters
 
 abecedario.forEach(creatLi);
@@ -92,7 +95,9 @@ copy2.querySelector("a").textContent = "No.";
 const parent2 = document.querySelector(".letterLinks ul");
 //append
 parent2.appendChild(copy2);
+//--------------------------------------------
 
+//------------------------------------------------
 //links to brands
 
 const url = "http://kea-alt-del.dk/t7/api/brands";

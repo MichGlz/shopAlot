@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const brandId = urlParams.get("brand");
 
-const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}`;
+const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=12`;
 
 const url = "http://kea-alt-del.dk/t7/api/products";
 

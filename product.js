@@ -13,6 +13,10 @@ fetch(urlProduct)
 function showProduct(product) {
   console.log(product);
 
+  if (product.soldout) {
+    document.querySelector("form button").textContent = "SOLD OUT";
+  }
+
   document.querySelectorAll(".brand").forEach((item) => {
     item.textContent = product.brandname;
   });
