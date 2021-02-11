@@ -165,3 +165,11 @@ function removeOl() {
     }
   }
 }
+function removeOl() {
+  console.log("removeOL()");
+  document.querySelectorAll("section ol").forEach(removeP);
+  function removeP(item) {
+    if (item.childElementCount < 1) {
+      // item.classList.add("empty");
+
+      item.parentElement.remove();
