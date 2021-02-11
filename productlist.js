@@ -2,7 +2,27 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const brandId = urlParams.get("brand");
 
-const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=12`;
+document.querySelector("#next").addEventListener("click", nextN);
+let nextNo = 0;
+let xNo = 12;
+let urlNew;
+
+function nextN() {
+  console.log("nextN");
+  nextNo = nextNo + xNo;
+  console.log(nextNo);
+  document.querySelectorAll("article").forEach((item) => item.remove());
+  urlNew = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}`;
+  fetch(urlNew)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      handleProductList(data);
+    });
+}
+
+const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}`;
 
 const url = "http://kea-alt-del.dk/t7/api/products";
 
