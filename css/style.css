@@ -287,9 +287,14 @@ body.category {
   align-items: center;
 }
 
-.bottonContainer button {
+.bottonContainer a {
   height: max(4vw, 4vh);
   width: 20%;
+}
+
+.bottonContainer button {
+  height: 100%;
+  width: 100%;
   font-size: 1.3rem;
 }
 
