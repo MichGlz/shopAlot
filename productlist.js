@@ -2,14 +2,33 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const brandId = urlParams.get("brand");
 const startId = urlParams.get("start");
+const limiiId = urlParams.get("limit");
 
 document.querySelector("#next").addEventListener("click", nextN);
 document.querySelector("#prev").addEventListener("click", prevN);
-let nextNo = Number(startId);
-let xNo = 12;
-let urlNew;
+let contPage = document.querySelector("#contOnPage");
 
-document.querySelector(".listCont").textContent = `${nextNo} - ${nextNo + 12}`;
+let nextNo = Number(startId);
+let xNo = Number(limiiId);
+if (xNo < 12) {
+  xNo = 12;
+}
+
+let urlNew;
+document.querySelector("#contOnPage option").textContent = xNo;
+document.querySelector("#prev").textContent = `Prev ${xNo}`;
+document.querySelector("#next").textContent = `Next ${xNo}`;
+
+function contOnPage() {
+  xNo = Number(contPage.value);
+  console.log(xNo);
+  if (nextNo < xNo) {
+    nextNo = 0;
+  }
+  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
+}
+
+document.querySelector(".listCont").textContent = `${nextNo} - ${nextNo + xNo}`;
 
 if (nextNo < xNo) {
   document.querySelector("#prev").removeEventListener("click", prevN);
@@ -19,18 +38,20 @@ function nextN() {
   console.log("nextN");
   nextNo = nextNo + xNo;
   console.log(nextNo);
-  document.querySelector(
-    ".bottonContainer a:nth-child(2)"
-  ).href = `productlist.html?brand=${brandId}&start=${nextNo}`;
+  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
+  // document.querySelector(
+  //   ".bottonContainer a:nth-child(2)"
+  // ).href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
 }
 
 function prevN() {
   console.log("prevN");
   nextNo = nextNo - xNo;
   console.log(nextNo);
-  document.querySelector(
-    ".bottonContainer a"
-  ).href = `productlist.html?brand=${brandId}&start=${nextNo}`;
+  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
+  // document.querySelector(
+  //   ".bottonContainer a"
+  // ).href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
 }
 
 const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}`;
