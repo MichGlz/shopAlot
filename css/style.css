@@ -195,6 +195,10 @@ body.category {
   background-color: rgb(157, 174, 206);
 }
 
+.productlist main p {
+  grid-column: 1/-1;
+}
+
 .productlist article {
   background-color: white;
   border: black;

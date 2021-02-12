@@ -1,42 +1,36 @@
 const urlParams = new URLSearchParams(window.location.search);
 
 const brandId = urlParams.get("brand");
+const startId = urlParams.get("start");
 
 document.querySelector("#next").addEventListener("click", nextN);
-let nextNo = 0;
+document.querySelector("#prev").addEventListener("click", prevN);
+let nextNo = Number(startId);
 let xNo = 12;
 let urlNew;
+
+document.querySelector(".listCont").textContent = `${nextNo} - ${nextNo + 12}`;
+
+if (nextNo < xNo) {
+  document.querySelector("#prev").removeEventListener("click", prevN);
+}
 
 function nextN() {
   console.log("nextN");
   nextNo = nextNo + xNo;
   console.log(nextNo);
-  document.querySelectorAll("article").forEach((item) => item.remove());
-  document.querySelector("#prev").addEventListener("click", prevN);
-  newUrl();
+  document.querySelector(
+    ".bottonContainer a:nth-child(2)"
+  ).href = `productlist.html?brand=${brandId}&start=${nextNo}`;
 }
 
 function prevN() {
   console.log("prevN");
   nextNo = nextNo - xNo;
   console.log(nextNo);
-  document.querySelectorAll("article").forEach((item) => item.remove());
-  if (nextNo < xNo) {
-    document.querySelector("#prev").removeEventListener("click", prevN);
-  }
-
-  newUrl();
-}
-
-function newUrl() {
-  urlNew = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}`;
-  fetch(urlNew)
-    .then(function (res) {
-      return res.json();
-    })
-    .then(function (data) {
-      handleProductList(data);
-    });
+  document.querySelector(
+    ".bottonContainer a"
+  ).href = `productlist.html?brand=${brandId}&start=${nextNo}`;
 }
 
 const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}`;
