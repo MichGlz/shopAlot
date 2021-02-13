@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Monoton&family=Poppins:wght@300;600&family=Roboto:wght@300;700&family=Slackey&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  padding-left: min(5vh, 5vw);
+}
+
+h1 {
+  font-family: slackey;
+  font-size: max(min(6vw, 8rem), 5vh);
+}
+
+h1 span {
+  display: inline-block;
+  /*font-family: poppins;*/
+  color: rgb(157, 174, 206);
+}
+
+main {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: tomato;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 1rem 10%;
+  margin-bottom: auto;
+}
+
+footer p {
+  color: white;
+  /* font-weight: bold; */
+}
+
+a {
+  text-decoration: none;
+  color: tomato;
+  font-family: roboto;
+  font-size: calc(1rem + 3vw);
+  background-color: thistle;
+  padding: 5vh 12vw;
+  border-radius: 2vw;
+  font-weight: bold;
+}
