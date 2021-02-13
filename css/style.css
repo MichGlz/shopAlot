@@ -83,6 +83,14 @@ body.category {
   top: 0;
   width: 100%;
   background-color: white;
+  z-index: 2;
+}
+
+.fixer h2 {
+  font-size: max(min(3vw, 3rem), 3vh);
+  margin-right: auto;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
 }
 
 .category header {
@@ -96,6 +104,11 @@ body.category {
   margin-top: max(14vw, 22vh);
   margin-left: auto;
   margin-right: auto;
+}
+
+.letterGroup h2 {
+  position: sticky;
+  top: max(12.5vw, 20vh);
 }
 
 .letterLinks {
@@ -312,11 +325,17 @@ body.category {
   color: antiquewhite;
 }
 
-.productlist footer {
+footer {
   background-color: tomato;
   width: 100%;
   height: max(6vw, 6vh);
   position: relative;
+  padding: 1rem 10%;
+}
+
+footer p {
+  color: white;
+  /* font-weight: bold; */
 }
 
 /*Product*/

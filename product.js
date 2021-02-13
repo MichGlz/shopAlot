@@ -25,6 +25,10 @@ function showProduct(product) {
   });
 
   document.querySelector(
+    ".breadcrumbs li:nth-child(3) a"
+  ).href = `productlist.html?brand=${product.brandname}`;
+
+  document.querySelector(
     "img.productimg"
   ).src = `https://kea-alt-del.dk/t7/images/webp/1000/${product.id}.webp`;
   document.querySelector("img.productimg").alt = product.productdisplayname;
