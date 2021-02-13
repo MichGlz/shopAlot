@@ -100,7 +100,7 @@ parent2.appendChild(copy2);
 //------------------------------------------------
 //links to brands
 
-const url = "http://kea-alt-del.dk/t7/api/brands";
+const url = "https://kea-alt-del.dk/t7/api/brands";
 
 fetch(url)
   .then(function (res) {

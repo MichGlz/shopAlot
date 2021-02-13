@@ -75,7 +75,7 @@ function prevN() {
 
 const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}${seasonUrl}`;
 
-const url = "http://kea-alt-del.dk/t7/api/products";
+const url = "https://kea-alt-del.dk/t7/api/products";
 
 document.querySelector("main h2").textContent = brandId;
 
