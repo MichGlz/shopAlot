@@ -3,10 +3,12 @@ const urlParams = new URLSearchParams(window.location.search);
 const brandId = urlParams.get("brand");
 const startId = urlParams.get("start");
 const limiiId = urlParams.get("limit");
+const seasonId = urlParams.get("season");
 
 document.querySelector("#next").addEventListener("click", nextN);
 document.querySelector("#prev").addEventListener("click", prevN);
 let contPage = document.querySelector("#contOnPage");
+let season = document.querySelector("#season");
 
 let nextNo = Number(startId);
 let xNo = Number(limiiId);
@@ -15,9 +17,26 @@ if (xNo < 12) {
 }
 
 let urlNew;
+let seasonUrl;
+if (seasonId) {
+  seasonUrl = `&season=${seasonId}`;
+  document.querySelector("#season option").textContent = seasonId;
+  if (seasonId == "All") {
+    seasonUrl = "";
+  }
+}
+
 document.querySelector("#contOnPage option").textContent = xNo;
 document.querySelector("#prev").textContent = `Prev ${xNo}`;
 document.querySelector("#next").textContent = `Next ${xNo}`;
+
+function selectSeason() {
+  seasonUrl = `&season=${season.value}`;
+  if (season.value == "All") {
+    seasonUrl = "";
+  }
+  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}${seasonUrl}`;
+}
 
 function contOnPage() {
   xNo = Number(contPage.value);
@@ -54,7 +73,7 @@ function prevN() {
   // ).href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
 }
 
-const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}`;
+const urlBrand = `https://kea-alt-del.dk/t7/api/products?brandname=${brandId}&limit=${xNo}&start=${nextNo}${seasonUrl}`;
 
 const url = "http://kea-alt-del.dk/t7/api/products";
 
@@ -75,6 +94,7 @@ function handleProductList(data) {
 
 function showProduct(product) {
   console.log(product);
+
   //grab the template
   const template = document.querySelector("#smallProductTemplate").content;
   //clone it

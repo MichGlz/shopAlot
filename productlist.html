@@ -20,7 +20,16 @@
       <div class="h2-p-conatiner">
         <h2></h2>
         <p class="listCont"></p>
-        <div>
+        <div id="ddElements">
+          <label for="seasons">Seasons:</label>
+          <select name="seasons" id="season" onchange="selectSeason()">
+            <option>All</option>
+            <option value="All">All</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Fall">Fall</option>
+            <option value="Winter">Winter</option>
+          </select>
           <label for="contPage">Items on page:</label>
           <select name="contPage" id="contOnPage" onchange="contOnPage()">
             <option>--</option>
