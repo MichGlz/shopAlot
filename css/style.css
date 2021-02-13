@@ -325,6 +325,10 @@ body.category {
   color: antiquewhite;
 }
 
+.discounted p {
+  font-size: 1.2rem;
+}
+
 footer {
   background-color: tomato;
   width: 100%;
@@ -349,6 +353,15 @@ footer p {
   column-gap: 1rem;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
+}
+
+.product .newPrice {
+  color: tomato;
+}
+
+.cross {
+  text-decoration: line-through;
+  text-decoration-thickness: 4px;
 }
 
 .product .breadcrumbs {

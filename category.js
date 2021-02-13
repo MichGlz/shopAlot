@@ -154,14 +154,23 @@ function takeBrand(brand) {
   }
 }
 
+let idRemove;
+
 function removeOl() {
   console.log("removeOL()");
   document.querySelectorAll("section ol").forEach(removeP);
   function removeP(item) {
     if (item.childElementCount < 1) {
-      // item.classList.add("empty");
+      idRemove = item.parentElement.id;
 
       item.parentElement.remove();
+      document.querySelectorAll(".letterLinks a").forEach((element) => {
+        if (
+          element.href[element.href.length - 1] == idRemove[idRemove.length - 1]
+        ) {
+          element.parentElement.remove();
+        }
+      });
     }
   }
 }
