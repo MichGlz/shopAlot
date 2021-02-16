@@ -47,7 +47,7 @@ function contOnPage() {
   if (nextNo < xNo) {
     nextNo = 0;
   }
-  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
+  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}&season=${seasonId}`;
 }
 
 document.querySelector(".listCont").textContent = `${nextNo} - ${nextNo + xNo}`;
@@ -60,7 +60,7 @@ function nextN() {
   console.log("nextN");
   nextNo = nextNo + xNo;
   console.log(nextNo);
-  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
+  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}&season=${seasonId}`;
   // document.querySelector(
   //   ".bottonContainer a:nth-child(2)"
   // ).href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
@@ -70,7 +70,7 @@ function prevN() {
   console.log("prevN");
   nextNo = nextNo - xNo;
   console.log(nextNo);
-  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
+  location.href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}&season=${seasonId}`;
   // document.querySelector(
   //   ".bottonContainer a"
   // ).href = `productlist.html?brand=${brandId}&limit=${xNo}&start=${nextNo}`;
@@ -93,6 +93,10 @@ fetch(urlBrand)
 function handleProductList(data) {
   //console.log(data);
   data.forEach(showProduct);
+  if (data.length < 1) {
+    console.log("no hay productos");
+    emptyData();
+  }
 }
 
 function showProduct(product) {
@@ -136,5 +140,21 @@ function showProduct(product) {
   //grab parent
   const parent = document.querySelector("main");
   //append
+  parent.appendChild(copy);
+}
+
+function emptyData() {
+  const template = document.querySelector("#empty").content;
+  const copy = template.cloneNode(true);
+  if (seasonId) {
+    copy.querySelector(
+      "h2"
+    ).textContent = `There are not products ${brandId} in ${seasonId} season.`;
+  } else {
+    copy.querySelector(
+      "h2"
+    ).textContent = ` There are not more products ${brandId}`;
+  }
+  const parent = document.querySelector("main");
   parent.appendChild(copy);
 }

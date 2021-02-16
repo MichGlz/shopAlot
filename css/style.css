@@ -345,6 +345,19 @@ footer p {
   /* font-weight: bold; */
 }
 
+.emptySeason {
+  grid-column: 1/ -1;
+  height: 40vh;
+  background-color: rgb(209, 209, 209);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptySeason h2 {
+  max-width: 20ch;
+}
+
 /*Product*/
 
 .product main {
@@ -359,7 +372,7 @@ footer p {
 }
 
 .product .newPrice {
-  color: tomato;
+  color: rgb(13, 42, 206);
 }
 
 .cross {
