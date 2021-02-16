@@ -7,6 +7,9 @@ const seasonId = urlParams.get("season");
 
 document.querySelector("#next").addEventListener("click", nextN);
 document.querySelector("#prev").addEventListener("click", prevN);
+document.querySelector("#season").addEventListener("change", selectSeason);
+document.querySelector("#contOnPage").addEventListener("change", contOnPage);
+
 let contPage = document.querySelector("#contOnPage");
 let season = document.querySelector("#season");
 
@@ -102,7 +105,7 @@ function showProduct(product) {
   //change content
   copy.querySelector(
     ".subtle"
-  ).textContent = `${product.articletype} | ${product.brandname}`;
+  ).textContent = `${product.articletype} | ${product.brandname} | ${product.season}`;
   copy.querySelector("h3").textContent = product.productdisplayname;
   copy.querySelector(
     "img"

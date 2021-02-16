@@ -30,9 +30,8 @@ main {
 
 footer {
   background-color: tomato;
-  width: 100%;
+
   height: auto;
-  position: relative;
   padding: 1rem 10%;
   margin-bottom: auto;
 }
